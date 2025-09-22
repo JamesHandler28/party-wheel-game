@@ -97,8 +97,10 @@ document.body.addEventListener('keydown', (event) => {
 wheel.addEventListener('transitionend', () => {
     const segmentAngle = 360 / games.length;
     const finalRawAngle = currentRotation % 360;
-    const correctedAngle = (360 - finalRawAngle + 270) % 360;
-    const winningIndex = Math.floor(correctedAngle / segmentAngle);
+
+    const winningAngle = (360 - finalRawAngle) % 360;
+    const winningIndex = Math.floor(winningAngle / segmentAngle);
+
     const winner = games[winningIndex];
 
     gameNameEl.textContent = winner.name;
