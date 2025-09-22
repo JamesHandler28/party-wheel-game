@@ -17,19 +17,22 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adjusted shadow for dark bg */
     text-align: center;
-    width: 90%;
-    max-width: 500px;
+    width: 95vw;
+    max-width: 700px;
 }
 
 h1 {
     color: #E0E0E0; /* Changed to light text */
     margin-top: 0;
+    font-size: calc(24px + 2vmin);
 }
 
 .wheel-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 65vmin;
+    height: 65vmin;
+    max-width: 450px;
+    max-height: 450px;
     margin: 30px auto;
 }
 
@@ -62,6 +65,7 @@ h1 {
     color: #888;
     font-weight: bold;
     margin-top: 20px;
+    font-size: calc(12px + 1vmin);
 }
 
 #overlay {
@@ -118,7 +122,7 @@ h1 {
 
 .wheel-label {
     position: absolute;
-    font-size: 30px;
+    font-size: clamp(14px, 6vmin, 45px);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 

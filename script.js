@@ -27,9 +27,14 @@ let currentRotation = 0;
 let gameState = 'ready';
 
 function setupWheel() {
+    wheel.innerHTML = '';
+
     const segmentAngle = 360 / games.length;
     const colors = ['#e74c3c', '#d35400', '#f39c12', '#f1c40f', '#b1d029ff', '#2ecc71', '#1abc9c', '#3498db', '#2980b9', '#9b59b6', '#be2edd', '#fd79a8'];
     let gradientParts = [];
+
+    const wheelDiameter = wheel.offsetWidth;
+    const radius = wheelDiameter * 0.30;
 
     games.forEach((game, index) => {
         const startAngle = index * segmentAngle;
@@ -38,7 +43,6 @@ function setupWheel() {
 
         const labelAngle = startAngle + (segmentAngle / 2);
         const labelAngleRad = (labelAngle - 90) * Math.PI / 180;
-        const radius = 95;
 
         const x = radius * Math.cos(labelAngleRad);
         const y = radius * Math.sin(labelAngleRad);
@@ -106,3 +110,5 @@ wheel.addEventListener('transitionend', () => {
 
 // Initialize the wheel
 setupWheel();
+
+window.addEventListener('resize', setupWheel);
