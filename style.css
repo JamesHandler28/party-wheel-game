@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Changed to dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    cursor: pointer;
+}
+
+.app-container {
+    background-color: #1E1E1E; /* Changed to a slightly lighter dark */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adjusted shadow for dark bg */
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #E0E0E0; /* Changed to light text */
+    margin-top: 0;
+}
+
+.wheel-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 30px auto;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 50%;
+    border: 5px solid #444; /* Changed to a mid-gray border */
+    box-sizing: border-box;
+    transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.pointer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #e74c3c;
+    z-index: 10;
+}
+
+.prompt-text {
+    color: #888;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Made overlay slightly darker */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+}
+
+#overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#overlay-content {
+    background-color: #2a2a2a; /* Changed overlay background to dark gray */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+#overlay.show #overlay-content {
+    transform: scale(1);
+}
+
+#overlay-content h2 {
+    margin-top: 0;
+    color: #E0E0E0; /* Changed to light text */
+}
+
+#overlay-content p {
+    color: #b0b0b0; /* Changed to light gray text */
+    line-height: 1.6;
+}
+
+#overlay-content small {
+    display: block;
+    margin-top: 20px;
+    color: #777; /* Adjusted for dark bg */
+}
+
+.wheel-label {
+    position: absolute;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}

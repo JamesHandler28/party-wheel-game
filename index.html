@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the Wheel Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Spin for a Game!</h1>
+        <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="pointer"></div>
+        </div>
+        <p class="prompt-text">Click anywhere to spin!</p>
+    </div>
+
+    <div id="overlay">
+        <div id="overlay-content">
+            <h2 id="game-name"></h2>
+            <p id="game-description"></p>
+            <small>Click anywhere to close</small>
+        </div>
+    </div>
+
+    <audio id="ticking-sound" src="https://actions.google.com/sounds/v1/alarms/winding_clock_timer.ogg" preload="auto"></audio>
+    <audio id="result-sound" src="https://actions.google.com/sounds/v1/cartoon/magic_chime.ogg" preload="auto"></audio>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
