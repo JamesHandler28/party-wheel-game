@@ -121,3 +121,14 @@ h1 {
     font-size: 30px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
+
+.watermark {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    pointer-events: none;
+    z-index: 50;
+}
