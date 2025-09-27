@@ -12,7 +12,9 @@ const games = [
     { name: "Questions", emoji: "❓", description: "The spinner asks someone a question. That person must answer by asking someone else a question. The first person to hesitate or make a statement loses." },
     { name: "Dare", emoji: "😱", description: "The spinner must perform a dare that the rest of the group comes up with." },
     { name: "True or False", emoji: "🎭", description: "The spinner makes a statement about themselves. Everyone else guesses if it's true or false. Those who guess wrong lose." },
-    { name: "Rule", emoji: "📜", description: "The spinner creates a new rule (e.g., 'you can't use your left hand'). Anyone who breaks the rule for the rest of the game loses." }
+    { name: "Rule", emoji: "📜", description: "The spinner creates a new rule (e.g., 'you can't use your left hand'). Anyone who breaks the rule for the rest of the game loses." },
+    { name: "Pirate", emoji: "🏴‍☠️", description: "The spinner is now the pirate. Now they have to end every sentence with the word 'Argg'"},
+    { name: "Basketball", emoji: "🏀", description: "The spinner shoots a three, if thhe score, everyone else looses, if they miss, they lose."}
 ];
 
 // --- DOM Elements ---
@@ -30,7 +32,7 @@ function setupWheel() {
     wheel.innerHTML = '';
 
     const segmentAngle = 360 / games.length;
-    const colors = ['#e74c3c', '#d35400', '#f39c12', '#f1c40f', '#b1d029ff', '#2ecc71', '#1abc9c', '#3498db', '#2980b9', '#9b59b6', '#be2edd', '#fd79a8'];
+    const colors = ['#ff0000ff', '#ff6600ff', '#ff9100ff', '#ffd900ff', '#aeff00ff', '#33ff00ff', '#00ff6aff', '#00ffccff', '#00aaffff', '#0066ffff', '#4400ffff', '#7b00ffff', '#d000ffff', '#ff0080ff'];
     let gradientParts = [];
 
     const wheelDiameter = wheel.offsetWidth;
@@ -114,3 +116,6 @@ wheel.addEventListener('transitionend', () => {
 setupWheel();
 
 window.addEventListener('resize', setupWheel);
+
+// Add this line at the very end of your script
+twemoji.parse(document.body);

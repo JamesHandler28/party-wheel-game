@@ -121,9 +121,24 @@ h1 {
 }
 
 .wheel-label {
+    /* Add this rule */
     position: absolute;
-    font-size: clamp(14px, 6vmin, 45px);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    font-size: clamp(14px, 6vmin, 45px); /* This was in your img rule, but belongs here */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* This also belongs on the container */
+    transform-origin: center; /* Ensures rotation is smooth */
+}
+
+.wheel-label img.emoji {
+    /* This replaces your old rule entirely */
+    width: clamp(25px, 6vmin, 45px); /* Use width/height to size images */
+    height: auto;
+    display: block;
+
+    /* This counter-rotates the image to keep it upright */
+    transform: rotate(90deg);
+
+    /* Use a drop-shadow filter for images instead of text-shadow */
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
 }
 
 .watermark {
