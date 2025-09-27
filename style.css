@@ -2,27 +2,28 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Changed to dark background */
+    background-color: #121212;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
     cursor: pointer;
+    overflow: hidden; /* Prevents scrollbars during animations */
 }
 
 .app-container {
-    background-color: #1E1E1E; /* Changed to a slightly lighter dark */
+    background-color: #1E1E1E;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adjusted shadow for dark bg */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 95vw;
     max-width: 700px;
 }
 
 h1 {
-    color: #E0E0E0; /* Changed to light text */
+    color: #E0E0E0;
     margin-top: 0;
     font-size: calc(24px + 2vmin);
 }
@@ -41,7 +42,7 @@ h1 {
     height: 100%;
     background-color: #ddd;
     border-radius: 50%;
-    border: 5px solid #444; /* Changed to a mid-gray border */
+    border: 5px solid #444;
     box-sizing: border-box;
     transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
     position: relative;
@@ -59,6 +60,7 @@ h1 {
     border-right: 20px solid transparent;
     border-top: 30px solid #e74c3c;
     z-index: 10;
+    filter: drop-shadow(0px -2px 3px rgba(0,0,0,0.3));
 }
 
 .prompt-text {
@@ -74,7 +76,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Made overlay slightly darker */
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,13 +91,16 @@ h1 {
     opacity: 1;
 }
 
+
+/* --- UPDATED POP-UP STYLES START HERE --- */
+
 #overlay-content {
-    background-color: #2a2a2a; /* Changed overlay background to dark gray */
-    padding: 30px;
+    background-color: #2a2a2a;
+    padding: 40px; /* Increased padding */
     border-radius: 15px;
     text-align: center;
     width: 90%;
-    max-width: 400px;
+    max-width: 550px; /* Increased max-width */
     transform: scale(0.9);
     transition: transform 0.3s ease;
 }
@@ -106,38 +111,34 @@ h1 {
 
 #overlay-content h2 {
     margin-top: 0;
-    color: #E0E0E0; /* Changed to light text */
+    color: #E0E0E0;
+    font-size: 2rem; /* Added larger font size */
 }
 
 #overlay-content p {
-    color: #b0b0b0; /* Changed to light gray text */
-    line-height: 1.6;
+    color: #b0b0b0;
+    line-height: 1.7; /* Increased line-height */
+    font-size: 1.1rem; /* Added larger font size */
 }
+
+/* --- UPDATED POP-UP STYLES END HERE --- */
+
 
 #overlay-content small {
     display: block;
     margin-top: 20px;
-    color: #777; /* Adjusted for dark bg */
+    color: #777;
 }
 
 .wheel-label {
-    /* Add this rule */
     position: absolute;
-    font-size: clamp(14px, 6vmin, 45px); /* This was in your img rule, but belongs here */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* This also belongs on the container */
-    transform-origin: center; /* Ensures rotation is smooth */
+    transform-origin: center;
 }
 
 .wheel-label img.emoji {
-    /* This replaces your old rule entirely */
-    width: clamp(25px, 6vmin, 45px); /* Use width/height to size images */
+    width: clamp(25px, 5vmin, 45px);
     height: auto;
     display: block;
-
-    /* This counter-rotates the image to keep it upright */
-    transform: rotate(90deg);
-
-    /* Use a drop-shadow filter for images instead of text-shadow */
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
 }
 
